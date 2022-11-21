@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2-tip</title>
+        <meta charset="utf-8">
+        <meta
+            name="viewport"
+            content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui"/>
+        <style>
+            @-ms-viewport {
+                width: device-width;
+            }
+        </style>
+        <link rel="stylesheet" href="vendor/reset.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/extra.css">
+    </head>
+    <body class="multiple-scenes ">
+
+        <button class="back_btn">
+            <img src="img/previous.svg" alt="">
+            <span>Назад в ген. план</span>
+        </button>
+
+        <button class="call_btn" onclick="showModal()">
+            <span>Заказать звонок</span>
+            <img src="img/shape.svg" alt="">
+        </button>
+
+        <a href="tel:998712104444">
+            <button class="call_btn-sm">
+                <img src="img/shape.svg" alt="phone">
+              </button>
+          </a>
+
+        <div class="overlay" id="overlay">
+            <div class="modal">
+                <div onclick="closeModal()">
+                    <img src="img/close.svg" alt="close" class="modal_close">
+                </div>
+                <div class="modal_content">
+                    <div class="modal_subtitle">Обратный звонок</div>
+                    <div class="modal_descr">Оставьте ваши контактные данные, и мы с вами свяжемся.</div>
+                    <form action="" class="ui-form">
+                        <div class="material">
+                            <input type="name" id="name" name="name" required="" autocomplete="off">
+                            <span class="borda"></span>
+                            <label>Имя</label>
+                        </div>
+                        <div class="material">
+                            <input
+                                type="phone"
+                                name="phone"
+                                id="phone"
+                                minlength="13"
+                                required=""
+                                pattern="^[0-9-                  +\s()]*$"
+                                autocomplete="off"
+                                placeholder="+998(__)___-__-__"
+                                inputmode="text">
+                            <span class="borda"></span>
+                            <label></label>
+                        </div>
+                        <p><input type="submit" value="Отправить"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="pano"></div>
+
+        <div id="sceneList">
+            <ul class="scenes">
+
+                <a href="javascript:void(0)" class="scene" data-id="0-1-360---2-tip-night">
+                    <li class="text">1-360---2-tip-night</li>
+                </a>
+
+                <a href="javascript:void(0)" class="scene" data-id="1-0-360---2-tip-day">
+                    <li class="text">0-360---2-tip-day</li>
+                </a>
+
+            </ul>
+        </div>
+
+        <div id="titleBar">
+            <h1 class="sceneName"></h1>
+        </div>
+
+        <a href="javascript:void(0)" id="autorotateToggle">
+            <img class="icon off" src="img/play.png">
+            <img class="icon on" src="img/pause.png">
+        </a>
+
+        <a href="javascript:void(0)" id="fullscreenToggle">
+            <img class="icon off" src="img/fullscreen.png">
+            <img class="icon on" src="img/windowed.png">
+        </a>
+
+        <a href="javascript:void(0)" id="sceneListToggle">
+            <img class="icon off" src="img/expand.png">
+            <img class="icon on" src="img/collapse.png">
+        </a>
+
+        <div class="allbutton">
+            <div class="button" id="mybutton" onclick="changeDoor()"></div>
+        </div>
+
+        <a
+            href="javascript:void(0)"
+            id="viewUp"
+            class="viewControlButton viewControlButton-1">
+            <img class="icon" src="img/up.png">
+        </a>
+        <a
+            href="javascript:void(0)"
+            id="viewDown"
+            class="viewControlButton viewControlButton-2">
+            <img class="icon" src="img/down.png">
+        </a>
+        <a
+            href="javascript:void(0)"
+            id="viewLeft"
+            class="viewControlButton viewControlButton-3">
+            <img class="icon" src="img/left.png">
+        </a>
+        <a
+            href="javascript:void(0)"
+            id="viewRight"
+            class="viewControlButton viewControlButton-4">
+            <img class="icon" src="img/right.png">
+        </a>
+        <a
+            href="javascript:void(0)"
+            id="viewIn"
+            class="viewControlButton viewControlButton-5">
+            <img class="icon" src="img/plus.png">
+        </a>
+        <a
+            href="javascript:void(0)"
+            id="viewOut"
+            class="viewControlButton viewControlButton-6">
+            <img class="icon" src="img/minus.png">
+        </a>
+
+        <img src="img/bu-logo.svg" alt="bu-logo" class="logo">
+
+        <div class="logo_svg">
+            <svg viewbox="0 0 70 70" width="32%">
+                <path
+                    d="M35,35m-23,0a23,23 0 1,1 46,0a23,23 0 1,1 -46,0"
+                    fill="none"
+                    id="tophalf"/>
+                <text style="font-size: 4px;" class="text">
+                    <textpath xlink:href="#tophalf" startoffset="1%">Sizning</textpath>
+                    <textpath xlink:href="#tophalf" startoffset="13.5%">Shahardagi</textpath>
+                    <textpath xlink:href="#tophalf" startoffset="33%">Hovlingiz</textpath>
+                    <textpath xlink:href="#tophalf" startoffset="51%">Sizning</textpath>
+                    <textpath xlink:href="#tophalf" startoffset="64%">Shahardagi</textpath>
+                    <textpath xlink:href="#tophalf" startoffset="83%">Hovlingiz</textpath>
+                </text>
+            </svg>
+            <img src="img/symbol2.svg" alt="vi" class="logo_img">
+        </div>
+
+        <div class="types">
+            <div class="type_1">
+                <a href="../1-tip/index.html"><img src="img/type1.png" alt=""></a>
+                <span>Тип виллы 1</span>
+            </div>
+        </div>
+
+        <div class="types">
+            <div class="type_2">
+                <a href="../2-tip/index.html"><img src="img/type2.png" alt=""></a>
+                <span>Тип виллы 2</span>
+            </div>
+        </div>
+
+        <script src="modal.js"></script>
+        <script src="vendor/screenfull.min.js"></script>
+        <script src="vendor/bowser.min.js"></script>
+        <script src="vendor/marzipano.js"></script>
+
+        <script src="data.js"></script>
+
+        <script>
+            function changeDoor() {
+                var element = document.getElementById("mybutton");
+                element
+                    .classList
+                    .toggle("nextbutton");
+
+                if (document.getElementById("mybutton").innerHTML == "Day") {
+                    document
+                        .getElementById("mybutton")
+                        .innerHTML = "Night";
+                    switchDoor("0-1-360---2-tip-night");
+                } else {
+                    document
+                        .getElementById("mybutton")
+                        .innerHTML = "Day";
+                    switchDoor("1-0-360---2-tip-day");
+                }
+
+            }
+        </script>
+
+        <script src="index.js"></script>
+
+    </body>
+</html>
