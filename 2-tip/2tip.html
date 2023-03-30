@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>1-tip</title>
+        <title>2-tip</title>
         <meta charset="utf-8">
         <meta
             name="viewport"
@@ -20,20 +20,20 @@
         <button class="back_btn">
             <img src="img/previous.svg" alt="">
             <span>Назад в ген. план</span>
-          </button>
-    
-          <button class="call_btn" onclick="showModal()">
+        </button>
+
+        <button class="call_btn" onclick="showModal()">
             <span>Заказать звонок</span>
             <img src="img/shape.svg" alt="">
-          </button>
+        </button>
 
-          <a href="tel:998712104444">
+        <a href="tel:998712104444">
             <button class="call_btn-sm">
                 <img src="img/shape.svg" alt="phone">
               </button>
           </a>
 
-          <div class="overlay" id="overlay">
+        <div class="overlay" id="overlay">
             <div class="modal">
                 <div onclick="closeModal()">
                     <img src="img/close.svg" alt="close" class="modal_close">
@@ -54,7 +54,7 @@
                                 id="phone"
                                 minlength="13"
                                 required=""
-                                pattern="^[0-9-+\s()]*$"
+                                pattern="^[0-9-                  +\s()]*$"
                                 autocomplete="off"
                                 placeholder="+998(__)___-__-__"
                                 inputmode="text">
@@ -66,18 +66,17 @@
                 </div>
             </div>
         </div>
-
         <div id="pano"></div>
 
         <div id="sceneList">
             <ul class="scenes">
 
-                <a href="javascript:void(0)" class="scene" data-id="0-1-360---1-tip-night">
-                    <li class="text">1-360---1-tip-night</li>
+                <a href="javascript:void(0)" class="scene" data-id="0-1-360---2-tip-night">
+                    <li class="text">1-360---2-tip-night</li>
                 </a>
 
-                <a href="javascript:void(0)" class="scene" data-id="1-0-360---1-tip-day">
-                    <li class="text">0-360---1-tip-day</li>
+                <a href="javascript:void(0)" class="scene" data-id="1-0-360---2-tip-day">
+                    <li class="text">0-360---2-tip-day</li>
                 </a>
 
             </ul>
@@ -165,19 +164,17 @@
 
         <div class="types">
             <div class="type_1">
-                <a href="../1-tip/index.html"><img src="img/type1.png" alt=""></a>
+                <a href="../index.html"><img src="img/type1.png" alt=""></a>
                 <span>Тип виллы 1</span>
             </div>
         </div>
 
         <div class="types">
             <div class="type_2">
-                <a href="../2-tip/index.html"><img src="img/type2.png" alt=""></a>
+                <a href="2tip.html"><img src="img/type2.png" alt=""></a>
                 <span>Тип виллы 2</span>
             </div>
         </div>
-
-        <img src="img/bu-logo.svg" alt="biz-logo" class="logo">
 
         <script src="modal.js"></script>
         <script src="vendor/screenfull.min.js"></script>
@@ -197,12 +194,12 @@
                     document
                         .getElementById("mybutton")
                         .innerHTML = "Night";
-                    switchDoor("0-1-360---1-tip-night");
+                    switchDoor("0-1-360---2-tip-night");
                 } else {
                     document
                         .getElementById("mybutton")
                         .innerHTML = "Day";
-                    switchDoor("1-0-360---1-tip-day");
+                    switchDoor("1-0-360---2-tip-day");
                 }
 
             }
